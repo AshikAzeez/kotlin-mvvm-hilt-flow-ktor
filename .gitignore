@@ -13,3 +13,10 @@
 .externalNativeBuild
 .cxx
 local.properties
+/.idea/
+/gradle/wrapper/gradle-wrapper.jar
+/gradlew
+/gradlew.bat
+/buildSrc/build/pluginUnderTestMetadata/plugin-under-test-metadata.properties
+/buildSrc/build/classes/kotlin/main/META-INF/
+/buildSrc/build/

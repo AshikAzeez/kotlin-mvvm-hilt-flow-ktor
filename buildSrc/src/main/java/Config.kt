@@ -4,9 +4,9 @@
  */
 object Config {
 
-    val applicatiınId = "com.sample.kotlin_mvvm_hilt_flow_ktor"
-    val apiApplicatiınId = "com.sample.api"
-    val testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+    const val applicatiınId = "com.sample.kotlin_mvvm_hilt_flow_ktor"
+    const val apiApplicatiınId = "com.sample.api"
+    const val testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
 
     
 }
@@ -18,14 +18,17 @@ interface BuildType {
     }
 
     val isMinifyEnabled: Boolean
+    val shrinkResources:Boolean
 }
 
 object BuildTypeDebug : BuildType {
     override val isMinifyEnabled = false
+    override val shrinkResources = false
 }
 
 object BuildTypeRelease : BuildType {
-    override val isMinifyEnabled = false
+    override val isMinifyEnabled = true
+    override val shrinkResources = true
 }
 
 object TestOptions {
