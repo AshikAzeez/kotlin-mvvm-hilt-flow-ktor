@@ -31,4 +31,6 @@ object Versions {
     const val androidxJunit="1.1.3"
     const val testRunnerVersion = "1.0.2"
     const val espressoCoreVersion = "3.4.0"
+    const val compose="1.0.1"
+    const val composeActiivty="1.3.1"
 }

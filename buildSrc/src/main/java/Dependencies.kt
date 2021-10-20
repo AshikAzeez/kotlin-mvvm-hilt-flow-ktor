@@ -1,5 +1,3 @@
-import kotlin.reflect.full.memberProperties
-
 /**
  * @author Ashik
  * Created on 09/10/21 .
@@ -16,6 +14,10 @@ object SupportLibraries {
 
 object UiLibraries{
     const val material = "com.google.android.material:material:${Versions.materialVersion}"
+    const val composeUi = "androidx.compose.ui:ui:${Versions.compose}"
+    const val composeUiToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
+    const val composeMaterial = "androidx.compose.material:material:${Versions.compose}"
+    const val composeActivity="androidx.activity:activity-compose:${Versions.composeActiivty}"
 }
 
 object TestLibraries {
