@@ -16,4 +16,8 @@ annotation class DatabaseName
 @Retention(AnnotationRetention.BINARY)
 annotation class BaseUrl
 
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class TestData
+
 

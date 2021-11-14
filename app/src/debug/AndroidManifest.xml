@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sample.kotlin_mvvm_hilt_flow_ktor" >
+
+    <application>
+        <activity
+            android:name=".view.HiltTestActivity"
+            android:exported="false" >
+        </activity>
+    </application>
+
+</manifest>

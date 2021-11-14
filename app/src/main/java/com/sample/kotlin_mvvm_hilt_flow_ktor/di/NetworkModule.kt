@@ -61,7 +61,6 @@ class NetworkModule {
         return "https://jsonplaceholder.typicode.com"
     }
 
-    @Singleton
     @Provides
     fun provideUserService(retrofit: Retrofit.Builder): UserService {
         return retrofit.build().create(UserService::class.java)

@@ -18,6 +18,8 @@ object UiLibraries {
 }
 
 object TestLibraries {
+    const val fragment = "androidx.fragment:fragment-testing:${Versions.fragmentTest}"
+    const val androidCore = "androidx.test:core-ktx:${Versions.ktxTest}"
     const val jUnit = "junit:junit:${Versions.jUnitVersion}"
     const val androidxJunit = "androidx.test.ext:junit:${Versions.androidxJunit}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}"
@@ -37,10 +39,11 @@ object NetworkLibraries {
 
 }
 
-object Navigation{
-    const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+object Navigation {
+    const val navigationFragment =
+        "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
-    const val navigationTest="androidx.navigation:navigation-testing:${Versions.navigation}"
+    const val navigationTest = "androidx.navigation:navigation-testing:${Versions.navigation}"
 }
 
 object RoomDependency {
