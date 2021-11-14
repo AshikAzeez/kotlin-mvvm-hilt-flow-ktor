@@ -7,7 +7,6 @@ buildscript {
     dependencies {
         classpath (ClassPaths.gradleClasspath)
         classpath (ClassPaths.kotlinGradlePluginClasspath)
-        classpath (ClassPaths.navgraphGradlePlugin)
         classpath (ClassPaths.daggerHiltGradlePlugin)
     }
 }

@@ -25,12 +25,15 @@ object Versions {
     const val kotlinKtxVersion = "1.6.0"
     const val navigation = "2.3.5"
     const val daggerHilt="2.38.1"
+    const val hiltViewmodels = "1.0.0-alpha02"
     const val appCompatVersion = "1.3.1"
     const val jUnitVersion = "4.13.2"
     const val materialVersion="1.4.0"
     const val androidxJunit="1.1.3"
     const val testRunnerVersion = "1.0.2"
     const val espressoCoreVersion = "3.4.0"
-    const val compose="1.0.1"
-    const val composeActiivty="1.3.1"
+    const val retrofit2="2.6.0"
+    const val fragmentKtx="1.2.5"
+    const val roomDb="2.3.0"
+    
 }

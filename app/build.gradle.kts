@@ -1,6 +1,8 @@
 plugins {
     id(Plugins.androidApplication)
     id(Plugins.kotlinAndroid)
+    id(Plugins.daggerHilt)
+    id(Plugins.kotlinKapt)
 }
 
 android {
@@ -8,24 +10,26 @@ android {
 
     defaultConfig {
         applicationId = Config.applicatiınId
-        minSdk =Versions.minSdkVersion
+        minSdk = Versions.minSdkVersion
         targetSdk = Versions.targetSdkVersion
         versionCode = Release.versionCode
         versionName = Release.versionName
-
         testInstrumentationRunner = Config.testInstrumentationRunner
     }
 
     buildTypes {
         getByName(BuildType.RELEASE) {
-            isMinifyEnabled =  BuildTypeRelease.isMinifyEnabled
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            resValue("string","api_key","YOUR_RELEASE_API_KEY_HERE")
-            
+            isMinifyEnabled = BuildTypeRelease.isMinifyEnabled
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            //resValue("string","api_key","YOUR_RELEASE_API_KEY_HERE")
+
         }
         getByName(BuildType.DEBUG) {
             isMinifyEnabled = BuildTypeDebug.isMinifyEnabled
-            resValue("string","api_key","YOUR_SANDBOX_API_KEY_HERE")
+            //resValue("string","api_key","YOUR_SANDBOX_API_KEY_HERE")
         }
         testOptions {
             unitTests.isReturnDefaultValues = TestOptions.IS_RETURN_DEFAULT_VALUES
@@ -48,30 +52,48 @@ android {
     }
 
 
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
         dataBinding = true
-        compose = true
-        
+        //compose = true
+
     }
 }
-
-
 
 dependencies {
     implementation(CoreLibraries.kotlin)
     implementation(CoreLibraries.kotlinKtx)
     implementation(SupportLibraries.appCompat)
     implementation(UiLibraries.material)
-    //Compose
-    implementation(UiLibraries.composeUi)
-    implementation(UiLibraries.composeMaterial)
-    implementation(UiLibraries.composeUiToolingPreview)
-    implementation(UiLibraries.composeActivity)
+    implementation(CoreLibraries.fragmentKtx)
+
+    //dependency injection + Test
+    implementation(DaggerLibraries.daggerAndroid)
+    implementation(RoomDependency.room)
+    //implementation(DaggerLibraries.hiltViewmodel)
+    kapt(DaggerLibraries.daggerCompiler)
+
+    //Network
+    implementation(NetworkLibraries.retrofit2)
+    implementation(NetworkLibraries.gsonConverter)
+
+
+    implementation(Navigation.navigationFragment)
+    implementation(Navigation.navigationUi)
+    implementation(Navigation.navigationTest)
 
 
     //Test
-    implementation(TestLibraries.androidxJunit)
-    implementation(TestLibraries.espresso)
-    implementation(TestLibraries.jUnit)
+    testImplementation(TestLibraries.jUnit)
+    testImplementation(TestLibraries.androidxJunit)
+
+    androidTestImplementation(TestLibraries.androidxJunit)
+    androidTestImplementation(TestLibraries.espresso)
+    androidTestImplementation(TestLibraries.jUnit)
+    androidTestImplementation(TestLibraries.dagger)
+    kaptAndroidTest(TestLibraries.daggerKaptTest)
+
+}
+kapt {
+    correctErrorTypes = true
 }
