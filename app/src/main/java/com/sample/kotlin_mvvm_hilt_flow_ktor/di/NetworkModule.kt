@@ -1,17 +1,16 @@
 package com.sample.kotlin_mvvm_hilt_flow_ktor.di
 
-import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.sample.kotlin_mvvm_hilt_flow_ktor.network.UserService
+import com.sample.kotlin_mvvm_hilt_flow_ktor.network.DogService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Converter
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -32,9 +31,7 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun providesOkHttpClient(
-        @ApplicationContext context: Context
-    ): OkHttpClient {
+    fun providesOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(15, TimeUnit.SECONDS)
@@ -43,8 +40,13 @@ class NetworkModule {
 
     @Singleton
     @Provides
+    fun provideConvertorFactory(gson: Gson): GsonConverterFactory =
+        GsonConverterFactory.create(gson)
+
+    @Singleton
+    @Provides
     fun providesRetrofit(
-        factory: Converter.Factory,
+        factory: GsonConverterFactory,
         client: OkHttpClient, @BaseUrl baseUrl: String
     ): Retrofit {
         return Retrofit.Builder()
@@ -58,11 +60,12 @@ class NetworkModule {
     @Provides
     @BaseUrl
     fun provideBaseUrl(): String {
-        return "https://jsonplaceholder.typicode.com"
+        return "https://dog.ceo/"
     }
 
+    @Singleton
     @Provides
-    fun provideUserService(retrofit: Retrofit.Builder): UserService {
-        return retrofit.build().create(UserService::class.java)
+    fun provideDogService(retrofit: Retrofit): DogService {
+        return retrofit.create(DogService::class.java)
     }
 }

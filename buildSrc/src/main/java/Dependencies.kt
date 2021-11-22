@@ -45,7 +45,10 @@ object Navigation {
     const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
     const val navigationTest = "androidx.navigation:navigation-testing:${Versions.navigation}"
 }
-
+object Coroutines{
+    const val coroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
+    const val coroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+}
 object RoomDependency {
     const val room = "androidx.room:room-ktx:${Versions.roomDb}"
 }

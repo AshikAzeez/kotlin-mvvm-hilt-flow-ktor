@@ -21,3 +21,12 @@ annotation class BaseUrl
 annotation class TestData
 
 
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class RandomeUrl
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class GsonConverter
+
+

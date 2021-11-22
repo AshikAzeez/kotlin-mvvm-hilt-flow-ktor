@@ -10,6 +10,7 @@ object Release {
 
 object Versions {
 
+    const val coroutines: String="1.3.9"
     const val fragmentTest = "1.3.0-alpha06"
     const val ktxTest = "1.2.0"
 

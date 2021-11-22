@@ -54,7 +54,7 @@ android {
 
     buildFeatures {
         viewBinding = true
-        dataBinding = true
+       // dataBinding = true
         //compose = true
 
     }
@@ -84,7 +84,8 @@ dependencies {
     implementation(Navigation.navigationFragment)
     implementation(Navigation.navigationUi)
     implementation(Navigation.navigationTest)
-
+    implementation(Coroutines.coroutineCore)
+    implementation(Coroutines.coroutineAndroid)
 
     //Test
     testImplementation(TestLibraries.jUnit)
