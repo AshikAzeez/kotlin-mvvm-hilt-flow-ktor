@@ -81,7 +81,7 @@ object NetworkModule {
 }
 
 
-//Only available this class
+//Only available in this class
 @Module
 @TestInstallIn(components = [SingletonComponent::class], replaces = [NetworkModule::class])
 object TestAppModule {

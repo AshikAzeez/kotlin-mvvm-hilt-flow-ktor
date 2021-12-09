@@ -19,12 +19,13 @@ object UiLibraries {
 
 object TestLibraries {
     const val fragment = "androidx.fragment:fragment-testing:${Versions.fragmentTest}"
-    const val androidCore = "androidx.test:core-ktx:${Versions.ktxTest}"
+    const val androidCoreKtx = "androidx.test:core-ktx:${Versions.ktxTest}"
     const val jUnit = "junit:junit:${Versions.jUnitVersion}"
     const val androidxJunit = "androidx.test.ext:junit:${Versions.androidxJunit}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}"
     const val dagger = "com.google.dagger:hilt-android-testing:${Versions.daggerHilt}"
     const val daggerKaptTest = "com.google.dagger:hilt-android-compiler:${Versions.daggerHilt}"
+    const val googleTruth="com.google.truth:truth:${Versions.googleTruth}"
 }
 
 object DaggerLibraries {

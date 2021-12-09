@@ -79,8 +79,7 @@ dependencies {
     //Network
     implementation(NetworkLibraries.retrofit2)
     implementation(NetworkLibraries.gsonConverter)
-
-
+    
     implementation(Navigation.navigationFragment)
     implementation(Navigation.navigationUi)
     implementation(Navigation.navigationTest)
@@ -90,15 +89,17 @@ dependencies {
     //Test
     testImplementation(TestLibraries.jUnit)
     testImplementation(TestLibraries.androidxJunit)
+    testImplementation(TestLibraries.googleTruth)
 
+    //Android test
     androidTestImplementation(TestLibraries.androidxJunit)
+    androidTestImplementation(TestLibraries.googleTruth)
     androidTestImplementation(TestLibraries.espresso)
     androidTestImplementation(TestLibraries.jUnit)
     androidTestImplementation(TestLibraries.dagger)
     kaptAndroidTest(TestLibraries.daggerKaptTest)
-
     androidTestImplementation(TestLibraries.fragment)
-    androidTestImplementation(TestLibraries.androidCore)
+    androidTestImplementation(TestLibraries.androidCoreKtx)
 
 }
 kapt {
