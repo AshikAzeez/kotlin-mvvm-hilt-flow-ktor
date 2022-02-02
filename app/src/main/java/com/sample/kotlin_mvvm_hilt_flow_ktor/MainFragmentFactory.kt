@@ -2,7 +2,7 @@ package com.sample.kotlin_mvvm_hilt_flow_ktor
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
-import com.sample.kotlin_mvvm_hilt_flow_ktor.view.DogFragment
+import com.sample.kotlin_mvvm_hilt_flow_ktor.view.SecondFragment
 import javax.inject.Inject
 
 
@@ -15,7 +15,7 @@ class MainFragmentFactory @Inject constructor(
 ) : FragmentFactory() {
     override fun instantiate(classLoader: ClassLoader, className: String): Fragment {
         return when (className) {
-            DogFragment::class.java.name -> DogFragment()
+            SecondFragment::class.java.name -> SecondFragment()
             else -> super.instantiate(classLoader, className)
 
         }

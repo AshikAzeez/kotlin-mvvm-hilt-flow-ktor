@@ -86,6 +86,7 @@ dependencies {
     implementation(Navigation.navigationTest)
     implementation(Coroutines.coroutineCore)
     implementation(Coroutines.coroutineAndroid)
+    implementation(Coroutines.lifecycleScope)
 
     //Test
     testImplementation(TestLibraries.jUnit)

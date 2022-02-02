@@ -48,6 +48,7 @@ object Navigation {
 object Coroutines{
     const val coroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     const val coroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+    const val lifecycleScope ="androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntime}"
 }
 object RoomDependency {
     const val room = "androidx.room:room-ktx:${Versions.roomDb}"

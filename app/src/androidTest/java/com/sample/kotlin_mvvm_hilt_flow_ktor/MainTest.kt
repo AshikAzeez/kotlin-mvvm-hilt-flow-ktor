@@ -6,7 +6,7 @@ import com.sample.kotlin_mvvm_hilt_flow_ktor.di.NetworkModule
 import com.sample.kotlin_mvvm_hilt_flow_ktor.di.TestData
 import com.sample.kotlin_mvvm_hilt_flow_ktor.util.launchFragmentInHiltContainer
 import com.sample.kotlin_mvvm_hilt_flow_ktor.view.MainActivity
-import com.sample.kotlin_mvvm_hilt_flow_ktor.view.DogFragment
+import com.sample.kotlin_mvvm_hilt_flow_ktor.view.SecondFragment
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.android.testing.HiltAndroidRule
@@ -62,7 +62,7 @@ class MainTest {
 
     @Test
     fun mainFragmentTest() {
-        val scenario = launchFragmentInHiltContainer<DogFragment>(factory = fragmentFactory) {
+        val scenario = launchFragmentInHiltContainer<SecondFragment>(factory = fragmentFactory) {
 
         }
     }
